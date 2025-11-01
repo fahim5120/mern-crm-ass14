@@ -20,13 +20,15 @@ app.use(cors({
 connectDB()
 
 
-router.get("/", (req, res) => {
-  res.send("This is the backend l");
-})
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieparser())
+
+app.get("/", (req, res) => {
+  res.send("This is the backend l");
+})
 
 
 // 🟢 multer form-data routes FIRST
