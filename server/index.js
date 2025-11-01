@@ -14,13 +14,15 @@ const cookieparser=require("cookie-parser")
 const app=express()
 
 app.use(cors({
-    origin:"http://localhost:5174",
+    origin:process.env.FRONTEND_URL,
     credentials:true
 }))
 connectDB()
 
 
-
+router.get("/", (req, res) => {
+  res.send("This is the backend l");
+})
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
